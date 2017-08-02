@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @author yuanyang
+ */
 @Repository
 public interface ContentDao {
 
@@ -38,9 +41,23 @@ public interface ContentDao {
     int updateContent(Content content);
 
     /**
+     * 增加阅读量
+     * @param contentId
+     * @return
+     */
+    int addView(Integer contentId);
+
+    /**
      * 查找所有的内容
      * @return
      */
     List<Content> selectAllContents();
+
+    /**
+     * 通过栏目查找对应的内容
+     * @param contentPart
+     * @return
+     */
+    List<Content> selectContentByPart(Integer contentPart);
 
 }

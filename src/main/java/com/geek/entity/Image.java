@@ -4,6 +4,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+/**
+ * @author yuanyang
+ */
 public class Image {
 
     //图片编号,自增
