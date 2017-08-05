@@ -30,6 +30,10 @@ public class MysqlDatabaseBackup {
     //数据库
     private String database;
 
+    public String getSavePath() {
+        return savePath;
+    }
+
     /**
      * 读取资源文件,以用于获得数据库的相关信息
      */

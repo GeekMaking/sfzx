@@ -34,7 +34,7 @@ public class FileUtil {
      * @param id        主码
      * @return
      */
-    public boolean saveImage(MultipartFile file, String clazzName, String id) {
+    public boolean saveFile(MultipartFile file, String clazzName, String id) {
         FileOutputStream fileOutputStream = null;
         BufferedOutputStream bufferedOutputStream = null;
         if (file.getSize() > 209715200) {
@@ -81,28 +81,28 @@ public class FileUtil {
         return false;
     }
     /**
-     * 更新图片
-     * @param image
-     * @param oldImagePath
+     * 更新文件
+     * @param file
+     * @param oldFilePath
      * @param clazzName
      * @param id
      * @return
      */
-    public boolean updateImage(MultipartFile image, String oldImagePath, String clazzName, String id){
-        //先删除原图片
-        deleteImage(oldImagePath);
-        //存新图片
-        boolean flag = saveImage(image,clazzName,id);
+    public boolean updateFile(MultipartFile file, String oldFilePath, String clazzName, String id){
+        //先删除原文件
+        deleteFile(oldFilePath);
+        //存新文件
+        boolean flag = saveFile(file,clazzName,id);
         return flag;
     }
 
     /**
-     * 删除图片
-     * @param imagePath
+     * 删除文件
+     * @param filePath
      */
-    public void deleteImage(String imagePath){
-        if (ValidateUtil.notEmpty(imagePath)){
-            File file = new File(imagePath.replace(virtualDir,realDir));
+    public void deleteFile(String filePath){
+        if (ValidateUtil.notEmpty(filePath)){
+            File file = new File(filePath.replace(virtualDir,realDir));
             if (file.exists()) {
                 try {
                     FileUtils.forceDelete(file);
@@ -114,13 +114,13 @@ public class FileUtil {
     }
 
     /**
-     * 批量删除图片
-     * @param imagePaths
+     * 批量删除文件
+     * @param filePaths
      */
-    public void deleteImages(List<String> imagePaths){
-        if (imagePaths != null || imagePaths.size() != 0)
-            for (String imagePath:imagePaths){
-                deleteImage(imagePath);
+    public void deleteFiles(List<String> filePaths){
+        if (filePaths != null || filePaths.size() != 0)
+            for (String filePath:filePaths){
+                deleteFile(filePath);
             }
     }
 
