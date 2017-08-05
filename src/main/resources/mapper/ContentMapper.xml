@@ -9,7 +9,7 @@
         <result column="content_part" javaType="Integer" jdbcType="INTEGER" property="contentPart"/>
         <result column="content_display" javaType="Integer" jdbcType="INTEGER" property="contentDisplay"/>
         <result column="content_notice" javaType="Integer" jdbcType="INTEGER" property="contentNotice"/>
-        <result column="content_time" javaType="Date" jdbcType="Date" property="contentTime"/>
+        <result column="content_time" javaType="Date" jdbcType="DATE" property="contentTime"/>
         <result column="content_view" javaType="Integer" jdbcType="INTEGER" property="contentView"/>
     </resultMap>
 
