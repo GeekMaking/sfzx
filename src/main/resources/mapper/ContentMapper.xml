@@ -60,7 +60,7 @@
         FROM content
     </select>
 
-    <select id="selectContentByPart" resultMap="Integer">
+    <select id="selectContentByPart" resultMap="content" parameterType="Integer">
         SELECT content_id,content_title,main_content,content_part,content_display,content_notice,content_time,content_view
         FROM content WHERE content_part = #{arg0}
     </select>
